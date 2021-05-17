@@ -5,5 +5,5 @@
     android:id="@+id/home_fragment_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment"
+    tools:context="com.example.bmusic.ui.home.HomeFragment"
     android:background="@drawable/background_recyclerview"/>

@@ -5,6 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/container_fragment_search"
-    tools:context=".ui.search.SearchFragment"
+    tools:context="com.example.bmusic.ui.search.SearchFragment"
     android:background="@drawable/background_recyclerview">
 </FrameLayout>

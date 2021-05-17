@@ -10,7 +10,7 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
-        android:name=".application.MusicApplication"
+        android:name="com.example.bmusic.application.MusicApplication"
         android:allowBackup="true"
         android:icon="@drawable/music"
         android:label="@string/app_name"
@@ -19,12 +19,12 @@
         android:theme="@style/Theme.Hanh_Music_31_10"
         tools:targetApi="m">
         <activity
-            android:name=".activity.SettingsActivity"
+            android:name="com.example.bmusic.activity.SettingsActivity"
             android:label="@string/music"/>
 
-        <activity android:name=".auth.HomeAuthActivity"/>
+        <activity android:name="com.example.bmusic.auth.HomeAuthActivity"/>
         <activity
-            android:name=".auth.AuthActivity"
+            android:name="com.example.bmusic.auth.AuthActivity"
             android:label="@string/app_name">
             <!--            <intent-filter>-->
             <!--                <action android:name="android.intent.action.MAIN" />-->
@@ -32,12 +32,12 @@
             <!--                <category android:name="android.intent.category.LAUNCHER" />-->
             <!--            </intent-filter>-->
         </activity>
-        <activity android:name=".auth.LoginActivity"/>
-        <activity android:name=".auth.SignUpActivity"/>
-        <activity android:name=".activity.AddSongToPlaylist"/>
+        <activity android:name="com.example.bmusic.auth.LoginActivity"/>
+        <activity android:name="com.example.bmusic.auth.SignUpActivity"/>
+        <activity android:name="com.example.bmusic.activity.AddSongToPlaylist"/>
 
         <activity
-            android:name=".activity.MainActivity"
+            android:name="com.example.bmusic.activity.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -51,10 +51,10 @@
                 android:resource="@xml/searchable" />
         </activity>
 
-        <service android:name=".service.MediaPlaybackService" />
+        <service android:name="com.example.bmusic.service.MediaPlaybackService" />
 
         <provider
-            android:name=".provider.FavoriteSongProvider"
+            android:name="com.example.bmusic.provider.FavoriteSongProvider"
             android:authorities="com.example.hanh_music_31_10.provider.FavoriteSongs"
             android:enabled="true"
             android:exported="true"
