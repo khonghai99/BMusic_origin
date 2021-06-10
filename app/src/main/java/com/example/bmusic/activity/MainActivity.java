@@ -108,7 +108,7 @@ import java.util.ArrayList;
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
-
+        // HaiKH Layout thu nho bai hat va event onclick
         mBottomControl = findViewById(R.id.layout_play_home);
         mBottomControl.setOnClickListener(new View.OnClickListener() {
             @Override

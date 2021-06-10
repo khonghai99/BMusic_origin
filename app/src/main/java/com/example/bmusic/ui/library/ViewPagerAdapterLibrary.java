@@ -17,7 +17,7 @@ public class ViewPagerAdapterLibrary extends FragmentStatePagerAdapter {
     public ViewPagerAdapterLibrary(@NonNull FragmentManager fm) {
         super(fm);
     }
-
+    // HaiKH sự kiện chuyển tab bên thư viên
     @NonNull
     @Override
     public Fragment getItem(int position) {

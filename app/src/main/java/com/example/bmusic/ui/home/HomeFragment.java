@@ -28,6 +28,7 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 
 public class HomeFragment extends Fragment {
 
@@ -91,6 +92,36 @@ public class HomeFragment extends Fragment {
     //Create data
     private void getData() {
         ArrayList<Playlist> mData = new ArrayList<>();
+        // HaiKH Get list MPH sap xep theo ngay ra mat
+        new Firebase(Constants.FIREBASE_REALTIME_DATABASE_URL).child(Constants.FIREBASE_REALTIME_SONG_PATH).orderByChild("releaseDate")
+                .limitToLast(6).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Gson gson = new Gson();
+
+                Object object = dataSnapshot.getValue(Object.class);
+                String json = gson.toJson(object);
+
+                try {
+                    Type listType = new TypeToken<HashMap<String, Song>>() {
+                    }.getType();
+                    HashMap<String, Song> data = gson.fromJson(json, listType);
+                    if (data != null) {
+                        Playlist playlist = new Playlist(1,"Mới phát hành", new ArrayList<>(data.values()));
+                        mData.add(playlist);
+                        return;
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
         new Firebase(Constants.FIREBASE_REALTIME_DATABASE_URL).child(Constants.FIREBASE_REALTIME_HOME_PATH)
                 .addListenerForSingleValueEvent(new ValueEventListener() {
             @Override

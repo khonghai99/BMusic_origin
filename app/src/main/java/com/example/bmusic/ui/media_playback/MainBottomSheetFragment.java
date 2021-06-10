@@ -88,6 +88,7 @@ public class MainBottomSheetFragment extends BottomSheetDialogFragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         PagerAdapterBottom pagerAdapter = new PagerAdapterBottom(getChildFragmentManager(), 0);
+        // HaiKH giao dien bai hat dang phat
         mViewPager = (ViewPager) view.findViewById(R.id.view_pager_playback);
         mViewPager.setAdapter(pagerAdapter);
 
